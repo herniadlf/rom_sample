@@ -10,6 +10,8 @@ db_config = {
 }
 
 config = ROM::Configuration.new(:sql, 'postgres://localhost:5432/romsample_dev', db_config)
+config.register_relation(Companies, Posts)
+
 MAIN_CONTAINER = ROM.container(config)
 
 Pry.start
