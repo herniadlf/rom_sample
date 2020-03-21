@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 require_relative 'boot'
+require_relative 'lib/relations/companies'
+require_relative 'lib/relations/posts'
+require_relative 'lib/commands/create_company'
+require_relative 'lib/commands/create_post'
+require_relative 'lib/commands/delete_company'
+require_relative 'lib/commands/delete_post'
+require_relative 'lib/commands/update_post'
 
 db_config = {
   name: 'romsample_dev',
@@ -11,7 +18,8 @@ db_config = {
 
 config = ROM::Configuration.new(:sql, 'postgres://localhost:5432/romsample_dev', db_config)
 config.register_relation(Companies, Posts)
-
+config.register_command(CreateCompany, DeleteCompany)
+config.register_command(CreatePost, UpdatePost, DeletePost)
 MAIN_CONTAINER = ROM.container(config)
 
 Pry.start
