@@ -1,0 +1,15 @@
+development:
+  db:
+    name: 'romsample_dev'
+    user: 'romsample'
+    password: 'romsample'
+    port: 5432
+    encoding: 'utf8'
+
+test:
+  db:
+    name: 'romsample_test'
+    user: 'romsample'
+    password: 'romsample'
+    port: 5432
+    encoding: 'utf8'

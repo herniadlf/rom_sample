@@ -11,3 +11,9 @@ gem 'pg'
 gem 'sequel'
 gem 'sequel_pg', :require=>'sequel'
 gem 'pry'
+
+group :test do
+  gem 'spec'
+  gem 'rspec'
+  gem 'rom-factory'
+end
